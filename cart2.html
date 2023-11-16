@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+            <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CQ6STK27ML"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CQ6STK27ML');
+</script>
+
+    <meta charset="UTF-8">
+    
+
+    <meta name="description" content="nic-webbpage">
+    <meta name="keywords" Content="mode, kläder, stil,">
+    <meta name="author" content=" Nicole Inna">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div class="header">
+
+   <div class="container">
+    <div class="navbar"> 
+        <div class="logo"> </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="Shop.html">Shop</a></li>
+                <li><a href="omoss.html">Om oss</a></li>
+                <li><a href="kundtjänst.html">Kundtjänst</a></li>
+                <img src="cart.png" width="25px" height="25px">
+            </ul>
+        </nav>
+    </div>
+<!------cart items details-->
+
+
+    <body>
+        <header>
+            <h1>Shopping Cart </h1>
+        </header>
+    
+        <div class="product" id="Co-Ord Caramel Set">
+            <h2>Co-Ord Caramel set</h2>
+            <p>Price: 3999 SEK</p>
+            <button onclick="addToCart('Product 1', 3999)">Add to Cart</button>
+        </div>
+        
+    
+        <div class="product" id="Jacket -Grey">
+            <h2>Jacket - Grey</h2>
+            <p>Price: 5999 SEK</p>
+            <button onclick="addToCart('Product 2',5999)">Add to Cart</button>
+        </div>
+    
+        <div class="cart" id="cart">
+            <h2></h2>
+            <ul id="cart-items"></ul>
+            <p>Total: SEK <span id="total">0</span></p>
+        </div>
+</body>
+
+
+<script>
+    let cart = [];
+
+    function addToCart(product, price) {
+        cart.push({ product, price });
+        updateCart();
+    }
+
+    function updateCart() {
+        const cartItems = document.getElementById('cart-items');
+        const totalElement = document.getElementById('total');
+
+
+        cartItems.innerHTML = '';
+
+        let total = 0;''
+
+        // Update the cart items
+        cart.forEach(item => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${item.product} - ${item.price}`;
+            cartItems.appendChild(listItem);
+
+            total += item.price;
+        });
+
+        // Update the total
+        totalElement.textContent = total;
+    }
+
+
+</script>
+<hr>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+
+            <div class="footer-col-1">
+                <h3>Download our App</h3>
+                <p>Download our app for Apple and Android </p>
+                <div class="app-logo">
+                    <img src="footer2.png">
+                </div>
+            </div>
+
+            <div class="footer-col-2">
+                <img src="logony.png">
+            </div>
+
+            <div class="footer-col-3">
+                <h3>Support</h3>
+                <ul>
+                    <li>Return Policy</li>
+                    <li>Size guied</li>
+                    <li>Customer Service </li>
+                </ul>
+            </div>
+
+            <div class="footer-col-4">
+                <h3>Follow us</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Instagram</li>
+                    <li>Pinterest</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">Copyright - 2023</p>
+    </div>
+</footer>
+</html>
